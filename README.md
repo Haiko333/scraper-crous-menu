@@ -1,4 +1,4 @@
-# crous-scanner
+# scraper crous menu
 
 Un petit script Python pour checker les menus des restos U du CROUS directement depuis le terminal.
 
@@ -41,5 +41,6 @@ Pour trouver le code de ton resto, lance le script et utilise la recherche (opti
 Le script tape sur l'API CROUStillant (`https://api.croustillant.menu/v1`) qui centralise les menus de tous les CROUS. C'est beaucoup plus fiable que de scraper le site du CROUS directement (qui charge tout en JS et qui est assez galère à parser).
 
 ## Crédits
+
 
 - [CROUStillant](https://croustillant.menu/) pour l'API
