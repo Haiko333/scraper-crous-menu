@@ -1,10 +1,10 @@
-# scraper crous menu
+# CROUS Menu Scraper
 
-Un petit script Python pour checker les menus des restos U du CROUS directement depuis le terminal.
+A small Python script to check university restaurant (resto U) menus from CROUS directly in the terminal.
 
-J'en avais marre de devoir aller sur le site du CROUS à chaque fois pour voir ce qu'il y avait à manger le midi, du coup j'ai fait ce truc. Ca utilise l'API [CROUStillant](https://croustillant.menu/) (merci à eux) pour récupérer les menus de tous les restaurants CROUS de France.
+I was tired of having to go to the CROUS website every time just to see what was for lunch, so I made this. It uses the [CROUStillant](https://croustillant.menu/) API (shoutout to them) to fetch menus from all CROUS restaurants across France.
 
-Par défaut c'est configuré sur le **RU GreEn-ER à Grenoble** mais ça marche avec n'importe quel resto U.
+By default it's set to the **RU GreEn-ER in Grenoble**, but it works with any university restaurant.
 
 ## Installation
 
@@ -12,35 +12,34 @@ Par défaut c'est configuré sur le **RU GreEn-ER à Grenoble** mais ça marche 
 pip install requests
 ```
 
-## Utilisation
+## Usage
 
 ```
 python main.py
 ```
 
-Le script est interactif, tu choisis ce que tu veux faire :
+The script is interactive — you pick what you want to do:
 
-- **1** - Voir le menu du jour (GreEn-ER par défaut, ou un autre resto si tu tapes son code)
-- **2** - Voir le menu d'un resto en tapant son code
-- **3** - Chercher un resto par nom (genre tape "diderot" ou "green" et il te trouve tous les restos qui matchent)
-- **4** - Lister tous les restos d'une région
-- **5** - Voir la liste des régions CROUS
+- **1** - View today's menu (GreEn-ER by default, or another restaurant if you enter its code)
+- **2** - View a restaurant's menu by entering its code
+- **3** - Search for a restaurant by name (e.g. type "diderot" or "green" and it finds all matching restaurants)
+- **4** - List all restaurants in a region
+- **5** - View the list of CROUS regions
 
-## Changer le resto par défaut
+## Changing the Default Restaurant
 
-Si t'es pas à Grenoble, ouvre `main.py` et change la variable en haut :
+If you're not in Grenoble, open `main.py` and change the variable at the top:
 
 ```python
-RESTAURANT_PAR_DEFAUT = 1456  # <- mets le code de ton resto ici
+DEFAULT_RESTAURANT = 1456  # <- put your restaurant's code here
 ```
 
-Pour trouver le code de ton resto, lance le script et utilise la recherche (option 3).
+To find your restaurant's code, run the script and use the search feature (option 3).
 
-## Comment ça marche
+## How It Works
 
-Le script tape sur l'API CROUStillant (`https://api.croustillant.menu/v1`) qui centralise les menus de tous les CROUS. C'est beaucoup plus fiable que de scraper le site du CROUS directement (qui charge tout en JS et qui est assez galère à parser).
+The script hits the CROUStillant API (`https://api.croustillant.menu/v1`), which aggregates menus from all CROUS institutions. It's much more reliable than scraping the CROUS website directly (which loads everything via JS and is a pain to parse).
 
-## Crédits
+## Credits
 
-
-- [CROUStillant](https://croustillant.menu/) pour l'API
+- [CROUStillant](https://croustillant.menu/) for the API
